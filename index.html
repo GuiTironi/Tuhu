@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TUHU Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #f4efe8;
+      --card: rgba(255,255,255,0.28);
+      --text: #2a1d16;
+      --brown: #6d4c41;
+      --light: #ffffff;
+      --shadow: rgba(0,0,0,0.12);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(244,239,232,0.82), rgba(244,239,232,0.82)),
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: var(--brown);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 60px;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 36px;
+      padding: 70px;
+      box-shadow: 0 10px 40px var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      opacity: 0.85;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--brown);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.35);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 28px;
+      object-fit: cover;
+      height: 620px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      opacity: 0.75;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.35s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.8;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--brown);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 30px;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .about-text {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .about-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      line-height: 1.9;
+      opacity: 0.85;
+    }
+
+    .cta {
+      text-align: center;
+      background: rgba(255,255,255,0.22);
+      border-radius: 40px;
+      padding: 70px 30px;
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      opacity: 0.85;
+    }
+
+    footer {
+      padding: 50px 24px;
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 980px) {
+      .hero-card,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 4rem;
+      }
+
+      .hero-image img {
+        height: 420px;
+      }
+
+      .about img {
+        height: 380px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-card {
+        padding: 40px 28px;
+      }
+
+      .hero-text h1 {
+        font-size: 3.2rem;
+      }
+
+      .section-title h2,
+      .about-text h2,
+      .cta h2 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">TUHU</div>
+
+      <div class="menu">
+        <a href="#cafes">Cafés</a>
+        <a href="#gelados">Gelados</a>
+        <a href="#salgados">Salgados</a>
+        <a href="#sobremesas">Sobremesas</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+
+      <div class="hero-text">
+        <h1>TUHU</h1>
+
+        <p>
+          Cafés especiais, sabores delicados e uma experiência elegante criada para transformar pequenos momentos em memórias aconchegantes.
+        </p>
+
+        <div class="buttons">
+          <a href="#cafes" class="btn btn-primary">Ver Cardápio</a>
+          <a href="https://wa.me/5511999999999" class="btn btn-secondary">Fazer Pedido</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop" alt="Café TUHU">
+      </div>
+
+    </div>
+  </section>
+
+  <section id="cafes">
+    <div class="section-title">
+      <h2>Cafés Especiais</h2>
+      <p>Selecionados cuidadosamente para proporcionar sabor e conforto.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Latte Vanilla</h3>
+          <p>Espresso cremoso com leite vaporizado e toque suave de baunilha.</p>
+          <div class="price">R$ 16,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Mocha Premium</h3>
+          <p>Chocolate intenso, espresso encorpado e finalização cremosa.</p>
+          <div class="price">R$ 19,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Capuccino TUHU</h3>
+          <p>Receita especial da casa com canela e espuma delicada.</p>
+          <div class="price">R$ 17,90</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gelados">
+    <div class="section-title">
+      <h2>Bebidas Geladas</h2>
+      <p>Refrescância elegante para qualquer momento do dia.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1fcef?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Iced Coffee</h3>
+          <p>Café gelado suave com espuma cremosa e gelo artesanal.</p>
+          <div class="price">R$ 18,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Frappé Caramelo</h3>
+          <p>Bebida cremosa com café, leite e caramelo especial.</p>
+          <div class="price">R$ 22,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1496318447583-f524534e9ce1?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Chocolate Ice</h3>
+          <p>Chocolate gelado intenso finalizado com chantilly.</p>
+          <div class="price">R$ 21,90</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="salgados">
+    <div class="section-title">
+      <h2>Salgados & Lanches</h2>
+      <p>Combinações leves, sofisticadas e saborosas.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Croissant Artesanal</h3>
+          <p>Massa leve e amanteigada recheada com queijo especial.</p>
+          <div class="price">R$ 15,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Toast TUHU</h3>
+          <p>Pão rústico, avocado, ovos e toque delicado da casa.</p>
+          <div class="price">R$ 24,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Sanduíche Premium</h3>
+          <p>Ingredientes frescos e combinação equilibrada de sabores.</p>
+          <div class="price">R$ 27,90</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="sobremesas">
+    <div class="section-title">
+      <h2>Sobremesas</h2>
+      <p>Finalizações doces para acompanhar o seu café.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Cheesecake Fruits</h3>
+          <p>Cheesecake delicado com frutas vermelhas frescas.</p>
+          <div class="price">R$ 18,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Torta de Chocolate</h3>
+          <p>Chocolate intenso com textura cremosa e sofisticada.</p>
+          <div class="price">R$ 20,90</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop">
+        <div class="product-info">
+          <h3>Cookies TUHU</h3>
+          <p>Cookies artesanais crocantes com gotas de chocolate.</p>
+          <div class="price">R$ 12,90</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="about">
+
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop" alt="Interior cafeteria">
+
+      <div class="about-text">
+        <h2>Sobre a TUHU</h2>
+
+        <p>
+          A TUHU nasceu para criar momentos leves, delicados e memoráveis. Cada detalhe foi pensado para transmitir aconchego, elegância e autenticidade.
+          
+          Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado para tornar cada visita uma experiência única.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>Peça sua experiência TUHU</h2>
+
+      <p>
+        Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes selecionados.
+      </p>
+
+      <a href="https://wa.me/5511999999999" class="btn btn-primary">
+        Pedir no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 TUHU Café — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
