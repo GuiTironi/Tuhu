@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TUHU Café</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <style>
+
+/* ===== FORMULÁRIO GLASS ===== */
+.form-contato {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* INPUTS MODERNOS */
+.form-contato .form-control {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.form-contato .form-control::placeholder {
+  color: #ccc;
+}
+
+.form-contato .form-control:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #0080ff;
+  box-shadow: 0 0 10px rgba(0,128,255,0.4);
+  color: #fff;
+}
+    
+    .whatsapp-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #000000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .whatsapp-btn i {
+      font-size: 2rem;
+      color: white;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -18,18 +77,18 @@
 
     :root {
       --bg: #f4efe8;
-      --card: rgba(255,255,255,0.28);
+      --card: rgba(255, 255, 255, 0.28);
       --text: #2a1d16;
       --brown: #6d4c41;
       --light: #ffffff;
-      --shadow: rgba(0,0,0,0.12);
+      --shadow: rgba(0, 0, 0, 0.12);
     }
 
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
       background:
-        linear-gradient(rgba(244,239,232,0.82), rgba(244,239,232,0.82)),
+        linear-gradient(rgba(244, 239, 232, 0.82), rgba(244, 239, 232, 0.82)),
         url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
       background-size: cover;
       background-attachment: fixed;
@@ -42,8 +101,8 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.12);
-      border-bottom: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     nav {
@@ -89,9 +148,9 @@
     .hero-card {
       width: 100%;
       max-width: 1100px;
-      background: rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 36px;
       padding: 70px;
       box-shadow: 0 10px 40px var(--shadow);
@@ -145,9 +204,9 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.35);
+      background: rgba(255, 255, 255, 0.35);
       color: var(--text);
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .btn-secondary:hover {
@@ -159,7 +218,7 @@
       border-radius: 28px;
       object-fit: cover;
       height: 620px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
     }
 
     section {
@@ -194,8 +253,8 @@
       backdrop-filter: blur(18px);
       border-radius: 28px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       transition: 0.35s;
     }
 
@@ -247,11 +306,11 @@
     }
 
     .about-text {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(15px);
       padding: 40px;
       border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .about-text h2 {
@@ -267,11 +326,11 @@
 
     .cta {
       text-align: center;
-      background: rgba(255,255,255,0.22);
+      background: rgba(255, 255, 255, 0.22);
       border-radius: 40px;
       padding: 70px 30px;
       backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .cta h2 {
@@ -296,6 +355,7 @@
     }
 
     @media (max-width: 980px) {
+
       .hero-card,
       .about {
         grid-template-columns: 1fr;
@@ -335,35 +395,31 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
     <nav>
 
-  <div class="logo">TUHU</div>
+      <div class="logo">TUHU</div>
 
-  <div class="menu">
-    <a href="#cafes">Cafés</a>
-    <a href="#gelados">Gelados</a>
-    <a href="#salgados">Salgados</a>
-    <a href="#sobremesas">Sobremesas</a>
-    <a href="#sobre">Sobre</a>
-  </div>
+      <div class="menu">
+        <a href="#cafes">Cafés</a>
+        <a href="#gelados">Gelados</a>
+        <a href="#salgados">Salgados</a>
+        <a href="#sobremesas">Sobremesas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#faleconosco">Fale Conosco</a>
+      </div>
 
-  <a href="https://wa.me/5511932137143" class="whatsapp-btn">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         width="18" 
-         height="18" 
-         fill="currentColor" 
-         viewBox="0 0 16 16">
-      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.02 0C3.58 0 .02 3.56.02 8c0 1.41.37 2.79 1.07 4L0 16l4.13-1.08A7.96 7.96 0 0 0 8.02 16c4.44 0 8-3.56 8-8a7.9 7.9 0 0 0-2.419-5.674zM8.02 14.54a6.48 6.48 0 0 1-3.3-.9l-.24-.14-2.45.64.65-2.39-.16-.25A6.48 6.48 0 1 1 8.02 14.54zm3.56-4.86c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.61.77-.11.13-.23.15-.43.05-.2-.1-.83-.3-1.58-.96-.58-.52-.97-1.16-1.08-1.36-.11-.2-.01-.3.08-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.46-.16-.38-.32-.33-.44-.34h-.37c-.13 0-.35.05-.53.25-.18.2-.69.67-.69 1.63s.7 1.89.8 2.02c.1.13 1.38 2.1 3.35 2.95.47.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.34-.95.17-.47.17-.87.12-.95-.05-.08-.18-.13-.38-.23z"/>
-    </svg>
+      <a href="https://wa.me/5511932137143" class="whatsapp-btn">
 
-    WhatsApp
-  </a>
+        <i class="bi bi-whatsapp "></i>
 
-</nav>
+
+      </a>
+
+    </nav>
   </header>
 
   <section class="hero">
@@ -373,7 +429,8 @@
         <h1>TUHU</h1>
 
         <p>
-          Cafés especiais, sabores delicados e uma experiência elegante criada para transformar pequenos momentos em memórias aconchegantes.
+          Cafés especiais, sabores delicados e uma experiência elegante criada para transformar pequenos momentos em
+          memórias aconchegantes.
         </p>
 
         <div class="buttons">
@@ -383,7 +440,8 @@
       </div>
 
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop" alt="Café TUHU">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
+          alt="Café TUHU">
       </div>
 
     </div>
@@ -433,14 +491,14 @@
         </div>
       </div>
 
-            <div class="product-card">
+      <div class="product-card">
         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
         <div class="product-info">
           <h3>Café com leite pequeno</h3>
           <p>Café expresso com leite vaporizado. </p>
           <div class="price">R$ 9,00</div>
         </div>
-      </div> 
+      </div>
 
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
@@ -696,15 +754,18 @@
   <section id="sobre">
     <div class="about">
 
-      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop" alt="Interior cafeteria">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop"
+        alt="Interior cafeteria">
 
       <div class="about-text">
         <h2>Sobre a TUHU</h2>
 
         <p>
-          A TUHU nasceu para criar momentos leves, delicados e memoráveis. Cada detalhe foi pensado para transmitir aconchego, elegância e autenticidade.
-          
-          Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado para tornar cada visita uma experiência única.
+          A TUHU nasceu para criar momentos leves, delicados e memoráveis. Cada detalhe foi pensado para transmitir
+          aconchego, elegância e autenticidade.
+
+          Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado para tornar cada visita
+          uma experiência única.
         </p>
       </div>
 
@@ -716,7 +777,8 @@
       <h2>Peça sua experiência TUHU</h2>
 
       <p>
-        Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes selecionados.
+        Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes
+        selecionados.
       </p>
 
       <a href="https://wa.me/5511999999999" class="btn btn-primary">
@@ -725,9 +787,232 @@
     </div>
   </section>
 
+  <section class="contact" id="contact">
+
+    <div class="container col-lg-12 py-5">
+
+
+        <h1 class="text-center mt-4">Contate-nos</h1>
+
+        <div class="container text-center mt-5">
+            <div class="col-lg-12">
+
+                <!-- FORM COM GLASS -->
+                <form id="formContato"
+                    action="https://formspree.io/f/xyzrpjgk"
+                    method="post"
+                    class="row gy-4 form-contato">
+
+                    <!-- Nome -->
+                    <div class="col-md-6">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" name="nome" id="nome" class="form-control" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="col-md-6">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" required>
+                    </div>
+
+                    <!-- Assunto -->
+                    <div class="col-md-6">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <input type="text" name="assunto" id="assunto" class="form-control" required>
+                    </div>
+
+                    <!-- Mensagem -->
+                    <div class="col-md-12">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea name="mensagem" id="mensagem" rows="4" class="form-control" required></textarea>
+                    </div>
+
+                    <!-- Botão -->
+                    <div class="col-md-12 text-center">
+                        <button type="submit" id="btnEnviar" class="btn btn-primary px-5 py-2">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="social-buttons text-center mb-4">
+
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/5511963012705?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
+                class="btn btn-whatsapp btn-lg mb-3" target="_blank">
+                <i class="bi bi-whatsapp me-2"></i> WhatsApp
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="https://www.instagram.com/pavanelliauto"
+                class="btn btn-instagram btn-lg mb-3" target="_blank">
+                <i class="bi bi-instagram me-2"></i> Instagram
+            </a>
+
+        </div>
+                <!-- INFO -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-12 text-center">
+                <h5 class="mt-2">São Paulo, SP - Pirituba</h5>
+                <h5 class="mt-2">Telefone: (11) 96301-2705</h5>
+                <h5>CNPJ: 30.193.273/0001-60</h5>
+                <h5 class="mt-2">Email: pavanelliautosocorro@gmail.com</h5>
+            </div>
+        </div>
+
+    </div>
+    
+</section>
+
+
   <footer>
     © 2026 TUHU Café — Todos os direitos reservados.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- PureCounter -->
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <!-- Isotope + Masonry -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* PureCounter */
+      new PureCounter();
+
+      /* AOS */
+      AOS.init({
+        duration: 1200,
+        once: true
+      });
+
+      /* GLightbox */
+      const lightbox = GLightbox({
+        selector: '.glightbox'
+      });
+
+      /* ISOTOPE (Galeria de fotos) */
+      let grid = document.querySelector('.isotope-container');
+
+      if (grid) {
+        let iso = new Isotope(grid, {
+          itemSelector: '.portfolio-item',
+          layoutMode: 'masonry'
+        });
+
+        // Filtro dos botões
+        let filtros = document.querySelectorAll('.portfolio-filters li');
+
+        filtros.forEach(f => {
+          f.addEventListener('click', function () {
+
+            // Remove destaque do filtro anterior
+            filtros.forEach(el => el.classList.remove('filter-active'));
+
+            // Adiciona classe ao clicado
+            this.classList.add('filter-active');
+
+            // Aplica filtro no Isotope
+            let filtro = this.getAttribute('data-filter');
+            iso.arrange({ filter: filtro });
+          });
+        });
+      }
+    });
+
+
+    // 📌 MÁSCARA DO TELEFONE ( (11) 98888-7777 )
+    document.getElementById("telefone").addEventListener("input", function () {
+      let v = this.value.replace(/\D/g, "");
+      if (v.length > 10) {
+        this.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7, 11)}`;
+      } else {
+        this.value = `(${v.slice(0, 2)}) ${v.slice(2, 6)}-${v.slice(6, 10)}`;
+      }
+    });
+
+    // 📌 NOME COM PRIMEIRA LETRA MAIÚSCULA (a cada espaço)
+    document.getElementById("nome").addEventListener("input", function () {
+      this.value = this.value
+        .toLowerCase()
+        .replace(/\b\w/g, c => c.toUpperCase());
+    });
+
+
+    // 📌 ALERTA BONITO
+    function mostrarAlerta(texto, tipo) {
+      const alerta = document.getElementById("alerta");
+      alerta.className = "alert alert-" + tipo;
+      alerta.textContent = texto;
+      alerta.classList.remove("d-none");
+    }
+
+    // 📌 RESPOSTA DO WEB3FORMS (feedback automático)
+    document.getElementById("formContato").addEventListener("submit", function () {
+      mostrarAlerta("Enviando sua mensagem...", "info");
+    });
+
+    // Web3Forms redirecionará depois do envio bem-sucedido
+
+    // Validação e envio do formulário com limpeza
+    const form = document.querySelector(".form-contato");
+
+    if (form) {
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Impede a atualização da página
+
+        const telefoneValor = telefoneInput?.value.replace(/\D/g, "");
+        if (!telefoneValor || telefoneValor.length !== 11) {
+          alert("Por favor, insira um telefone válido com 11 dígitos.");
+          telefoneInput?.focus();
+          return;
+        }
+
+        const formData = new FormData(form);
+        const action = form.getAttribute("action");
+
+        try {
+          const response = await fetch(action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            alert("Mensagem enviada com sucesso!");
+            form.reset();
+          } else {
+            alert("Erro ao enviar a mensagem. Tente novamente.");
+          }
+
+        } catch (error) {
+          alert("Erro de conexão. Verifique sua internet.");
+        }
+      });
+    }
+  </script>
 </body>
+
 </html>
