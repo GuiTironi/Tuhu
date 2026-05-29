@@ -19,6 +19,53 @@
     rel="stylesheet">
 
   <style>
+    /* ===== ABAS ===== */
+
+    .tabs-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 140px auto 40px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 14px 30px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 600;
+
+      transition: 0.3s;
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .tab-btn.active {
+      background: var(--brown);
+      color: white;
+    }
+
+    /* CONTEÚDOS */
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     /* ===== CAROUSEL SOBRE ===== */
 
     .about-carousel {
@@ -133,7 +180,7 @@
       color: var(--text);
       background:
         linear-gradient(rgba(244, 239, 232, 0.82), rgba(244, 239, 232, 0.82)),
-        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+        url('foto/mesa\ com\ macarroes.jpeg');
       background-size: cover;
       background-attachment: fixed;
       min-height: 100vh;
@@ -457,487 +504,566 @@
       </div>
     </nav>
   </header>
+  <div id="cafeteria" class="tab-content active">
+    <section class="hero">
 
-  <section class="hero">
-    <div class="hero-card">
+      <div class="hero-card">
 
-      <div class="hero-text">
-        <h1>TUHU</h1>
+        <div class="hero-text">
+          <!-- ABAS -->
+          <div class="tabs-container mb-5 mt-0">
+
+            <button class="tab-btn active" onclick="mostrarAba('cafeteria')">
+              ☕ Cafeteria
+            </button>
+
+            <button class="tab-btn" onclick="mostrarAba('restaurante')">
+              🍝 Restaurante
+            </button>
+
+          </div>
+          <h1>TUHU</h1>
+
+          <p>
+            Cafés especiais, sabores delicados e uma experiência elegante criada para transformar pequenos momentos em
+            memórias aconchegantes.
+          </p>
+
+          <div class="buttons">
+            <a href="#cafes" class="btn btn-primary">Ver Cardápio</a>
+            <a href="https://wa.me/5511932137143" class="btn btn-secondary"> <i class="bi bi-whatsapp"> Whatsapp</i></a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="foto/coffe break sonho.jpeg" alt="Café TUHU">
+        </div>
+
+
+      </div>
+    </section>
+
+    <section id="cafes">
+      <div class="section-title">
+        <h2>Cafés tradicionais</h2>
+        <p>Feitos com ingredientes de qualidade e amor.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Café Expresso</h3>
+            <p>Expresso clássico. </p>
+            <div class="price">R$ 08,00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Pingado</h3>
+            <p>Expesso clássico com pouco leite.</p>
+            <div class="price">R$ 00,00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Carioca</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 00,00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Média</h3>
+            <p>Café expresso com leite vaporizado. </p>
+            <div class="price">R$ 11,50</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Café com leite pequeno</h3>
+            <p>Café expresso com leite vaporizado. </p>
+            <div class="price">R$ 9,00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Café coado</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 09,00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Café mocca</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 16,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Café bombom</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 09,90</div>
+          </div>
+        </div>
+
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Cappucino Grande</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 15,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Cappucino Pequeno</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 14,50</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Cappucino com nutella</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 17,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Cappucino com raspas de chocolate</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 17,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Frapê</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 19,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Macchiato</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 08,50</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Chocolate Italiano</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 16,00</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="section-title">
+        <h2>Cafés Especiais</h2>
+        <p>Selecionados cuidadosamente para proporcionar sabor e conforto.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Latte Vanilla</h3>
+            <p>Espresso cremoso com leite vaporizado e toque suave de baunilha.</p>
+            <div class="price">R$ 16,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Mocha Premium</h3>
+            <p>Chocolate intenso, espresso encorpado e finalização cremosa.</p>
+            <div class="price">R$ 19,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Capuccino TUHU</h3>
+            <p>Receita especial da casa com canela e espuma delicada.</p>
+            <div class="price">R$ 17,90</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="gelados">
+      <div class="section-title">
+        <h2>Bebidas Geladas</h2>
+        <p>Refrescância elegante para qualquer momento do dia.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1fcef?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Iced Coffee</h3>
+            <p>Café gelado suave com espuma cremosa e gelo artesanal.</p>
+            <div class="price">R$ 18,90</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="foto/cappucino gelado.jpeg">
+          <div class="product-info">
+            <h3>Cappucino gelado</h3>
+            <p>Expresso com pouco café.</p>
+            <div class="price">R$ 19,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Frappé Caramelo</h3>
+            <p>Bebida cremosa com café, leite e caramelo especial.</p>
+            <div class="price">R$ 22,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1496318447583-f524534e9ce1?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Chocolate Ice</h3>
+            <p>Chocolate gelado intenso finalizado com chantilly.</p>
+            <div class="price">R$ 21,90</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="salgados">
+      <div class="section-title">
+        <h2>Salgados & Lanches</h2>
+        <p>Combinações leves, sofisticadas e saborosas.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Croissant Artesanal</h3>
+            <p>Massa leve e amanteigada recheada com queijo especial.</p>
+            <div class="price">R$ 15,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Toast TUHU</h3>
+            <p>Pão rústico, avocado, ovos e toque delicado da casa.</p>
+            <div class="price">R$ 24,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Sanduíche Premium</h3>
+            <p>Ingredientes frescos e combinação equilibrada de sabores.</p>
+            <div class="price">R$ 27,90</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sobremesas">
+      <div class="section-title">
+        <h2>Sobremesas</h2>
+        <p>Finalizações doces para acompanhar o seu café.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Cheesecake Fruits</h3>
+            <p>Cheesecake delicado com frutas vermelhas frescas.</p>
+            <div class="price">R$ 18,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Torta de Chocolate</h3>
+            <p>Chocolate intenso com textura cremosa e sofisticada.</p>
+            <div class="price">R$ 20,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop">
+          <div class="product-info">
+            <h3>Cookies TUHU</h3>
+            <p>Cookies artesanais crocantes com gotas de chocolate.</p>
+            <div class="price">R$ 12,90</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="about">
+
+        <!-- CAROUSEL -->
+        <div id="carouselSobre" class="carousel slide about-carousel" data-bs-ride="carousel">
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop"
+                class="d-block w-100" alt="Interior cafeteria">
+            </div>
+
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+                class="d-block w-100" alt="Café artesanal">
+            </div>
+
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
+                class="d-block w-100" alt="Mesa de cafeteria">
+            </div>
+
+          </div>
+
+          <!-- BOTÕES -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselSobre" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselSobre" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div>
+
+        <!-- TEXTO -->
+        <div class="about-text">
+          <h2>Sobre a TUHU</h2>
+
+          <p>
+            A TUHU nasceu para criar momentos leves, delicados e memoráveis.
+            Cada detalhe foi pensado para transmitir aconchego, elegância e autenticidade.
+
+            Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado
+            para transformar cada visita em uma experiência única.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="cta">
+        <h2>Peça sua experiência TUHU</h2>
 
         <p>
-          Cafés especiais, sabores delicados e uma experiência elegante criada para transformar pequenos momentos em
-          memórias aconchegantes.
+          Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes
+          selecionados.
         </p>
 
-        <div class="buttons">
-          <a href="#cafes" class="btn btn-primary">Ver Cardápio</a>
-          <a href="https://wa.me/5511932137143" class="btn btn-secondary">Fazer Pedido</a>
-        </div>
-      </div>
-
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
-          alt="Café TUHU">
-      </div>
-
-    </div>
-  </section>
-
-  <section id="cafes">
-    <div class="section-title">
-      <h2>Cafés tradicionais</h2>
-      <p>Feitos com ingredientes de qualidade e amor.</p>
-    </div>
-
-    <div class="products-grid">
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Café Expresso</h3>
-          <p>Expresso clássico. </p>
-          <div class="price">R$ 08,00</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Pingado</h3>
-          <p>Expesso clássico com pouco leite.</p>
-          <div class="price">R$ 00,00</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Carioca</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 00,00</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Média</h3>
-          <p>Café expresso com leite vaporizado. </p>
-          <div class="price">R$ 11,50</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Café com leite pequeno</h3>
-          <p>Café expresso com leite vaporizado. </p>
-          <div class="price">R$ 9,00</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Café coado</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 09,00</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Café mocca</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 16,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Café bombom</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 09,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cappucino gelado</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 19,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cappucino Grande</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 15,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cappucino Pequeno</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 14,50</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cappucino com nutella</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 17,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cappucino com raspas de chocolate</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 17,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Frapê</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 19,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Macchiato</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 08,50</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Chocolate Italiano</h3>
-          <p>Expresso com pouco café.</p>
-          <div class="price">R$ 16,00</div>
-        </div>
-      </div>
-
-    </div>
-    <div class="section-title">
-      <h2>Cafés Especiais</h2>
-      <p>Selecionados cuidadosamente para proporcionar sabor e conforto.</p>
-    </div>
-
-    <div class="products-grid">
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Latte Vanilla</h3>
-          <p>Espresso cremoso com leite vaporizado e toque suave de baunilha.</p>
-          <div class="price">R$ 16,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Mocha Premium</h3>
-          <p>Chocolate intenso, espresso encorpado e finalização cremosa.</p>
-          <div class="price">R$ 19,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Capuccino TUHU</h3>
-          <p>Receita especial da casa com canela e espuma delicada.</p>
-          <div class="price">R$ 17,90</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="gelados">
-    <div class="section-title">
-      <h2>Bebidas Geladas</h2>
-      <p>Refrescância elegante para qualquer momento do dia.</p>
-    </div>
-
-    <div class="products-grid">
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1fcef?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Iced Coffee</h3>
-          <p>Café gelado suave com espuma cremosa e gelo artesanal.</p>
-          <div class="price">R$ 18,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Frappé Caramelo</h3>
-          <p>Bebida cremosa com café, leite e caramelo especial.</p>
-          <div class="price">R$ 22,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1496318447583-f524534e9ce1?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Chocolate Ice</h3>
-          <p>Chocolate gelado intenso finalizado com chantilly.</p>
-          <div class="price">R$ 21,90</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="salgados">
-    <div class="section-title">
-      <h2>Salgados & Lanches</h2>
-      <p>Combinações leves, sofisticadas e saborosas.</p>
-    </div>
-
-    <div class="products-grid">
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Croissant Artesanal</h3>
-          <p>Massa leve e amanteigada recheada com queijo especial.</p>
-          <div class="price">R$ 15,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Toast TUHU</h3>
-          <p>Pão rústico, avocado, ovos e toque delicado da casa.</p>
-          <div class="price">R$ 24,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Sanduíche Premium</h3>
-          <p>Ingredientes frescos e combinação equilibrada de sabores.</p>
-          <div class="price">R$ 27,90</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="sobremesas">
-    <div class="section-title">
-      <h2>Sobremesas</h2>
-      <p>Finalizações doces para acompanhar o seu café.</p>
-    </div>
-
-    <div class="products-grid">
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cheesecake Fruits</h3>
-          <p>Cheesecake delicado com frutas vermelhas frescas.</p>
-          <div class="price">R$ 18,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Torta de Chocolate</h3>
-          <p>Chocolate intenso com textura cremosa e sofisticada.</p>
-          <div class="price">R$ 20,90</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop">
-        <div class="product-info">
-          <h3>Cookies TUHU</h3>
-          <p>Cookies artesanais crocantes com gotas de chocolate.</p>
-          <div class="price">R$ 12,90</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="sobre">
-    <div class="about">
-
-      <!-- CAROUSEL -->
-      <div id="carouselSobre" class="carousel slide about-carousel" data-bs-ride="carousel">
-
-        <div class="carousel-inner">
-
-          <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop"
-              class="d-block w-100" alt="Interior cafeteria">
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
-              class="d-block w-100" alt="Café artesanal">
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
-              class="d-block w-100" alt="Mesa de cafeteria">
-          </div>
-
-        </div>
-
-        <!-- BOTÕES -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSobre" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselSobre" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-
-      </div>
-
-      <!-- TEXTO -->
-      <div class="about-text">
-        <h2>Sobre a TUHU</h2>
-
-        <p>
-          A TUHU nasceu para criar momentos leves, delicados e memoráveis.
-          Cada detalhe foi pensado para transmitir aconchego, elegância e autenticidade.
-
-          Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado
-          para transformar cada visita em uma experiência única.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="cta">
-      <h2>Peça sua experiência TUHU</h2>
-
-      <p>
-        Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes
-        selecionados.
-      </p>
-
-      <a href="https://wa.me/5511999999999" class="btn btn-primary">
-        Pedir no WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-
-    <div class="container col-lg-12 py-5">
-
-
-      <h1 class="text-center mt-4">Contate-nos</h1>
-
-      <div class="container text-center mt-5">
-        <div class="col-lg-12">
-
-          <!-- FORM COM GLASS -->
-          <form id="formContato" action="https://formspree.io/f/xyzrpjgk" method="post" class="row gy-4 form-contato">
-
-            <!-- Nome -->
-            <div class="col-md-6">
-              <label for="nome" class="form-label">Nome Completo</label>
-              <input type="text" name="nome" id="nome" class="form-control" required>
-            </div>
-
-            <!-- Email -->
-            <div class="col-md-6">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" name="email" id="email" class="form-control" required>
-            </div>
-
-            <!-- Telefone -->
-            <div class="col-md-6">
-              <label for="telefone" class="form-label">Telefone</label>
-              <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" required>
-            </div>
-
-            <!-- Assunto -->
-            <div class="col-md-6">
-              <label for="assunto" class="form-label">Assunto</label>
-              <input type="text" name="assunto" id="assunto" class="form-control" required>
-            </div>
-
-            <!-- Mensagem -->
-            <div class="col-md-12">
-              <label for="mensagem" class="form-label">Mensagem</label>
-              <textarea name="mensagem" id="mensagem" rows="4" class="form-control" required></textarea>
-            </div>
-
-            <!-- Botão -->
-            <div class="col-md-12 text-center">
-              <button type="submit" id="btnEnviar" class="btn btn-primary px-5 py-2">
-                Enviar Mensagem
-              </button>
-            </div>
-
-          </form>
-
-        </div>
-      </div>
-
-      <div class="social-buttons text-center mb-4">
-
-        <!-- WHATSAPP -->
-        <a href="https://wa.me/5511963012705?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
-          class="btn btn-whatsapp btn-lg mb-3" target="_blank">
-          <i class="bi bi-whatsapp me-2"></i> WhatsApp
+        <a href="https://wa.me/5511999999999" class="btn btn-primary">
+          Pedir no WhatsApp
         </a>
-
-        <!-- INSTAGRAM -->
-        <a href="https://www.instagram.com/pavanelliauto" class="btn btn-instagram btn-lg mb-3" target="_blank">
-          <i class="bi bi-instagram me-2"></i> Instagram
-        </a>
-
       </div>
-      <!-- INFO -->
-      <div class="row justify-content-center mt-5">
-        <div class="col-md-12 text-center">
-          <h5 class="mt-2">São Paulo, SP - Pirituba</h5>
-          <h5 class="mt-2">Telefone: (11) 96301-2705</h5>
-          <h5>CNPJ: 30.193.273/0001-60</h5>
-          <h5 class="mt-2">Email: pavanelliautosocorro@gmail.com</h5>
+    </section>
+
+    <section class="contact" id="contact">
+
+      <div class="container col-lg-12 py-5">
+
+
+        <h1 class="text-center mt-4">Contate-nos</h1>
+
+        <div class="container text-center mt-5">
+          <div class="col-lg-12">
+
+            <!-- FORM COM GLASS -->
+            <form id="formContato" action="https://formspree.io/f/xyzrpjgk" method="post" class="row gy-4 form-contato">
+
+              <!-- Nome -->
+              <div class="col-md-6">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" name="nome" id="nome" class="form-control" required>
+              </div>
+
+              <!-- Email -->
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+              </div>
+
+              <!-- Telefone -->
+              <div class="col-md-6">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" required>
+              </div>
+
+              <!-- Assunto -->
+              <div class="col-md-6">
+                <label for="assunto" class="form-label">Assunto</label>
+                <input type="text" name="assunto" id="assunto" class="form-control" required>
+              </div>
+
+              <!-- Mensagem -->
+              <div class="col-md-12">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea name="mensagem" id="mensagem" rows="4" class="form-control" required></textarea>
+              </div>
+
+              <!-- Botão -->
+              <div class="col-md-12 text-center">
+                <button type="submit" id="btnEnviar" class="btn btn-primary px-5 py-2">
+                  Enviar Mensagem
+                </button>
+              </div>
+
+            </form>
+
+          </div>
         </div>
+
+        <div class="social-buttons text-center mb-4">
+
+          <!-- WHATSAPP -->
+          <a href="https://wa.me/5511963012705?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
+            class="btn btn-whatsapp btn-lg mb-3" target="_blank">
+            <i class="bi bi-whatsapp me-2"></i> WhatsApp
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a href="https://www.instagram.com/pavanelliauto" class="btn btn-instagram btn-lg mb-3" target="_blank">
+            <i class="bi bi-instagram me-2"></i> Instagram
+          </a>
+
+        </div>
+        <!-- INFO -->
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-12 text-center">
+            <h5 class="mt-2">São Paulo, SP - Pirituba</h5>
+            <h5 class="mt-2">Telefone: (11) 96301-2705</h5>
+            <h5>CNPJ: 30.193.273/0001-60</h5>
+            <h5 class="mt-2">Email: pavanelliautosocorro@gmail.com</h5>
+          </div>
+        </div>
+
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </div>
+  <!-- RESTAURANTE -->
+  <div id="restaurante" class="tab-content">
+
+    <section class="hero">
+      <div class="hero-card">
+
+        <div class="hero-text">
+          <h1>Restaurante TUHU</h1>
 
 
+
+          <p>
+            Massas artesanais, pratos sofisticados e sabores especiais preparados cuidadosamente.
+          </p>
+
+          <a href="#" class="btn btn-primary mb-4" onclick="mostrarAba('cafeteria', event)">
+            <i class="bi bi-arrow-left"></i>
+            Voltar para Cafeteria
+          </a>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">Ver Pratos</a>
+          </div>
+
+
+        </div>
+
+        <div class="hero-image">
+          <img src="foto/mesa com macarroes.jpeg" alt="">
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Pratos Especiais</h2>
+        <p>Uma experiência gastronômica elegante.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="product-info">
+            <h3>Fettuccine Alfredo</h3>
+            <p>Massa artesanal ao molho cremoso.</p>
+            <div class="price">R$ 42,90</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="product-info">
+            <h3>Risoto Premium</h3>
+            <p>Risoto sofisticado da casa.</p>
+            <div class="price">R$ 48,90</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
   <footer>
     © 2026 TUHU Café — Todos os direitos reservados.
   </footer>
@@ -1073,6 +1199,31 @@
         } catch (error) {
           alert("Erro de conexão. Verifique sua internet.");
         }
+      });
+    }
+    /* ===== ABAS ===== */
+
+    function mostrarAba(aba) {
+
+      // REMOVE ACTIVE DOS BOTÕES
+      document.querySelectorAll('.tab-btn')
+        .forEach(btn => btn.classList.remove('active'));
+
+      // REMOVE ACTIVE DOS CONTEÚDOS
+      document.querySelectorAll('.tab-content')
+        .forEach(tab => tab.classList.remove('active'));
+
+      // MOSTRA CONTEÚDO
+      document.getElementById(aba)
+        .classList.add('active');
+
+      // ATIVA BOTÃO
+      event.target.classList.add('active');
+
+      // VOLTA AO TOPO
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     }
   </script>
