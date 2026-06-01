@@ -484,6 +484,53 @@
         font-size: 2.5rem;
       }
     }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .btn-whatsapp,
+    .btn-instagram {
+      min-width: 240px;
+      padding: 18px 35px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      border-radius: 20px;
+      border: none;
+
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-instagram {
+      background: linear-gradient(135deg,
+          #833AB4,
+          #FD1D1D,
+          #FCAF45);
+      color: white;
+    }
+
+    .btn-whatsapp:hover,
+    .btn-instagram:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-whatsapp i,
+    .btn-instagram i {
+      font-size: 1.4rem;
+    }
   </style>
 </head>
 
@@ -494,17 +541,199 @@
 
       <div class="logo">TUHU</div>
 
-      <div class="menu">
-        <a href="#cafes">Cafés</a>
-        <a href="#gelados">Gelados</a>
-        <a href="#salgados">Salgados</a>
-        <a href="#sobremesas">Sobremesas</a>
+      <div class="menu" id="navbarMenu">
         <a href="#sobre">Sobre</a>
         <a href="#contact">Fale Conosco</a>
-      </div>
     </nav>
   </header>
-  <div id="cafeteria" class="tab-content active">
+
+  <div id="inicio" class="tab-content active">
+
+    <section class="hero">
+
+      <div class="hero-card">
+
+        <div class="hero-text">
+
+          <h1>Bem-vindo ao TUHU</h1>
+
+          <p>
+            Um espaço onde cafeteria e restaurante se encontram
+            para proporcionar experiências únicas.
+          </p>
+
+          <div class="buttons">
+
+            <a href="#" onclick="mostrarAba('cafeteria', event)" class="btn btn-primary">
+              Conhecer Cafeteria
+            </a>
+
+            <a href="#" onclick="mostrarAba('restaurante', event)" class="btn btn-secondary">
+              Conhecer Restaurante
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="hero-image">
+          <img src="foto/coffe break sonho.jpeg" alt="">
+        </div>
+
+      </div>
+
+
+    </section>
+    <section id="sobre">
+      <div class="about">
+
+        <!-- CAROUSEL -->
+        <div id="carouselSobre" class="carousel slide about-carousel" data-bs-ride="carousel">
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img src="foto/mesa com macarroes.jpeg" class="d-block w-100" alt="Interior cafeteria">
+            </div>
+
+            <div class="carousel-item">
+              <img src="foto/macarrao raviole.jpeg" class="d-block w-100" alt="Café artesanal">
+            </div>
+
+            <div class="carousel-item">
+              <img src="foto/coxinha de morango.jpeg" class="d-block w-100" alt="Mesa de cafeteria">
+            </div>
+
+          </div>
+
+          <!-- BOTÕES -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselSobre" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselSobre" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div>
+
+        <!-- TEXTO -->
+        <div class="about-text">
+          <h2>Sobre a TUHU</h2>
+
+          <p>
+            A TUHU nasceu para criar momentos leves, delicados e memoráveis.
+            Cada detalhe foi pensado para transmitir aconchego, elegância e autenticidade.
+
+            Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado
+            para transformar cada visita em uma experiência única.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="cta">
+        <h2>Peça sua experiência TUHU</h2>
+
+        <p>
+          Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes
+          selecionados.
+        </p>
+
+        <a href="https://wa.me/5511989436393" class="btn btn-primary">
+          Pedir no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+
+      <div class="container col-lg-12 py-5">
+
+
+        <h1 class="text-center mt-4">Contate-nos</h1>
+
+        <div class="container text-center mt-5">
+          <div class="col-lg-12">
+
+            <!-- FORM COM GLASS -->
+            <form id="formContato" action="https://formspree.io/f/xyzrpjgk" method="post" class="row gy-4 form-contato">
+
+              <!-- Nome -->
+              <div class="col-md-6">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" name="nome" id="nome" class="form-control" required>
+              </div>
+
+              <!-- Email -->
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+              </div>
+
+              <!-- Telefone -->
+              <div class="col-md-6">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" required>
+              </div>
+
+              <!-- Assunto -->
+              <div class="col-md-6">
+                <label for="assunto" class="form-label">Assunto</label>
+                <input type="text" name="assunto" id="assunto" class="form-control" required>
+              </div>
+
+              <!-- Mensagem -->
+              <div class="col-md-12">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea name="mensagem" id="mensagem" rows="4" class="form-control" required></textarea>
+              </div>
+
+              <!-- Botão -->
+              <div class="col-md-12 text-center">
+                <button type="submit" id="btnEnviar" class="btn btn-primary px-5 py-2">
+                  Enviar Mensagem
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+        <div class="social-buttons text-center mb-4">
+
+          <!-- WHATSAPP -->
+          <a href="https://wa.me/5511989436993?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
+            class="btn btn-whatsapp btn-lg mb-3" target="_blank">
+            <i class="bi bi-whatsapp me-2"></i> WhatsApp
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a href="https://www.instagram.com/pavanelliauto" class="btn btn-instagram btn-lg mb-3" target="_blank">
+            <i class="bi bi-instagram me-2"></i> Instagram
+          </a>
+
+        </div>
+        <!-- INFO -->
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-12 text-center">
+            <h5 class="mt-2">São Paulo, SP - Vila Hamburguesa</h5>
+            <h5 class="mt-2">Telefone: (11) 98943-6993</h5>
+            <h5>CNPJ: 13.352.809.0001-24</h5>
+            <h5 class="mt-2">Email: adm@restaurantetuhu.com.br</h5>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <div id="cafeteria" class="tab-content">
     <section class="hero">
 
       <div class="hero-card">
@@ -513,13 +742,15 @@
           <!-- ABAS -->
           <div class="tabs-container mb-5 mt-0">
 
-            <button class="tab-btn active" onclick="mostrarAba('cafeteria')">
-              ☕ Cafeteria
+            <button class="tab-btn active" onclick="mostrarAba('inicio')">
+              <i class="bi bi-arrow-left"></i>
+              Voltar para Inico
             </button>
 
             <button class="tab-btn" onclick="mostrarAba('restaurante')">
-              🍝 Restaurante
+              Restaurante
             </button>
+
 
           </div>
           <h1>TUHU</h1>
@@ -847,155 +1078,7 @@
       </div>
     </section>
 
-    <section id="sobre">
-      <div class="about">
 
-        <!-- CAROUSEL -->
-        <div id="carouselSobre" class="carousel slide about-carousel" data-bs-ride="carousel">
-
-          <div class="carousel-inner">
-
-            <div class="carousel-item active">
-              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop"
-                class="d-block w-100" alt="Interior cafeteria">
-            </div>
-
-            <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
-                class="d-block w-100" alt="Café artesanal">
-            </div>
-
-            <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
-                class="d-block w-100" alt="Mesa de cafeteria">
-            </div>
-
-          </div>
-
-          <!-- BOTÕES -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselSobre" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselSobre" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-
-        </div>
-
-        <!-- TEXTO -->
-        <div class="about-text">
-          <h2>Sobre a TUHU</h2>
-
-          <p>
-            A TUHU nasceu para criar momentos leves, delicados e memoráveis.
-            Cada detalhe foi pensado para transmitir aconchego, elegância e autenticidade.
-
-            Nosso espaço combina cafés especiais, receitas artesanais e um ambiente sofisticado
-            para transformar cada visita em uma experiência única.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-      <div class="cta">
-        <h2>Peça sua experiência TUHU</h2>
-
-        <p>
-          Faça seu pedido online e aproveite sabores exclusivos preparados com cuidado, delicadeza e ingredientes
-          selecionados.
-        </p>
-
-        <a href="https://wa.me/5511999999999" class="btn btn-primary">
-          Pedir no WhatsApp
-        </a>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-
-      <div class="container col-lg-12 py-5">
-
-
-        <h1 class="text-center mt-4">Contate-nos</h1>
-
-        <div class="container text-center mt-5">
-          <div class="col-lg-12">
-
-            <!-- FORM COM GLASS -->
-            <form id="formContato" action="https://formspree.io/f/xyzrpjgk" method="post" class="row gy-4 form-contato">
-
-              <!-- Nome -->
-              <div class="col-md-6">
-                <label for="nome" class="form-label">Nome Completo</label>
-                <input type="text" name="nome" id="nome" class="form-control" required>
-              </div>
-
-              <!-- Email -->
-              <div class="col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" required>
-              </div>
-
-              <!-- Telefone -->
-              <div class="col-md-6">
-                <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" required>
-              </div>
-
-              <!-- Assunto -->
-              <div class="col-md-6">
-                <label for="assunto" class="form-label">Assunto</label>
-                <input type="text" name="assunto" id="assunto" class="form-control" required>
-              </div>
-
-              <!-- Mensagem -->
-              <div class="col-md-12">
-                <label for="mensagem" class="form-label">Mensagem</label>
-                <textarea name="mensagem" id="mensagem" rows="4" class="form-control" required></textarea>
-              </div>
-
-              <!-- Botão -->
-              <div class="col-md-12 text-center">
-                <button type="submit" id="btnEnviar" class="btn btn-primary px-5 py-2">
-                  Enviar Mensagem
-                </button>
-              </div>
-
-            </form>
-
-          </div>
-        </div>
-
-        <div class="social-buttons text-center mb-4">
-
-          <!-- WHATSAPP -->
-          <a href="https://wa.me/5511963012705?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
-            class="btn btn-whatsapp btn-lg mb-3" target="_blank">
-            <i class="bi bi-whatsapp me-2"></i> WhatsApp
-          </a>
-
-          <!-- INSTAGRAM -->
-          <a href="https://www.instagram.com/pavanelliauto" class="btn btn-instagram btn-lg mb-3" target="_blank">
-            <i class="bi bi-instagram me-2"></i> Instagram
-          </a>
-
-        </div>
-        <!-- INFO -->
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-12 text-center">
-            <h5 class="mt-2">São Paulo, SP - Pirituba</h5>
-            <h5 class="mt-2">Telefone: (11) 96301-2705</h5>
-            <h5>CNPJ: 30.193.273/0001-60</h5>
-            <h5 class="mt-2">Email: pavanelliautosocorro@gmail.com</h5>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
 
   </div>
   <!-- RESTAURANTE -->
@@ -1013,13 +1096,24 @@
             Massas artesanais, pratos sofisticados e sabores especiais preparados cuidadosamente.
           </p>
 
-          <a href="#" class="btn btn-primary mb-4" onclick="mostrarAba('cafeteria', event)">
-            <i class="bi bi-arrow-left"></i>
-            Voltar para Cafeteria
-          </a>
-
           <div class="buttons">
-            <a href="#" class="btn btn-primary">Ver Pratos</a>
+
+            <a href="#" class="btn btn-secondary" onclick="mostrarAba('inicio', event)">
+              <i class="bi bi-arrow-left"></i> Início
+            </a>
+
+            <a href="#" class="btn btn-secondary" onclick="mostrarAba('cafeteria', event)">
+              Cafeteria
+            </a>
+
+            <a href="#pratos" class="btn btn-primary">
+              Ver Pratos
+            </a>
+
+            <a href="https://wa.me/5511989436393" class="btn btn-primary">
+              <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+
           </div>
 
 
@@ -1032,8 +1126,8 @@
       </div>
     </section>
 
-    <section>
-      <div class="section-title">
+    <section id="pratos">
+      <div class="pratos">
         <h2>Pratos Especiais</h2>
         <p>Uma experiência gastronômica elegante.</p>
       </div>
@@ -1201,26 +1295,58 @@
         }
       });
     }
+
+    function atualizarNavbar(aba) {
+
+      const menu = document.getElementById("navbarMenu");
+
+      if (aba === "inicio") {
+
+        menu.innerHTML = `
+      <a href="#sobre">Sobre</a>
+      <a href="#contact">Fale Conosco</a>
+    `;
+
+      } else if (aba === "cafeteria") {
+
+        menu.innerHTML = `
+      <a href="#cafes">Cafés</a>
+      <a href="#gelados">Gelados</a>
+      <a href="#salgados">Salgados</a>
+      <a href="#sobremesas">Sobremesas</a>
+    `;
+
+      } else if (aba === "restaurante") {
+
+        menu.innerHTML = `
+      <a href="#pratos">Pratos</a>
+    `;
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        atualizarNavbar("inicio");
+      });
+    }
+
+
     /* ===== ABAS ===== */
 
-    function mostrarAba(aba) {
+    function mostrarAba(aba, event) {
 
-      // REMOVE ACTIVE DOS BOTÕES
       document.querySelectorAll('.tab-btn')
         .forEach(btn => btn.classList.remove('active'));
 
-      // REMOVE ACTIVE DOS CONTEÚDOS
       document.querySelectorAll('.tab-content')
         .forEach(tab => tab.classList.remove('active'));
 
-      // MOSTRA CONTEÚDO
       document.getElementById(aba)
         .classList.add('active');
 
-      // ATIVA BOTÃO
-      event.target.classList.add('active');
+      if (event) {
+        event.target.classList.add('active');
+      }
 
-      // VOLTA AO TOPO
+      atualizarNavbar(aba);
+
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
