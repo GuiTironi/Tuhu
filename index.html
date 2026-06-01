@@ -531,19 +531,142 @@
     .btn-instagram i {
       font-size: 1.4rem;
     }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    /* CELULAR */
+    @media (max-width: 768px) {
+
+      nav {
+        position: relative;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+
+        border-radius: 0 0 20px 20px;
+
+        overflow: hidden;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu a {
+        padding: 18px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      .hero-card {
+        padding: 25px;
+        gap: 25px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      .hero-text p {
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-image img {
+        height: 300px;
+      }
+
+      .about-carousel img {
+        height: 280px;
+      }
+
+      .about img {
+        height: 280px;
+      }
+
+      .product-card img {
+        height: 200px;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .cta {
+        padding: 40px 20px;
+      }
+
+      .social-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-whatsapp,
+      .btn-instagram {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .form-contato {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <header>
+
     <nav>
 
       <div class="logo">TUHU</div>
 
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
+      </button>
+
       <div class="menu" id="navbarMenu">
         <a href="#sobre">Sobre</a>
         <a href="#contact">Fale Conosco</a>
+      </div>
+
     </nav>
   </header>
 
@@ -1347,10 +1470,29 @@
 
       atualizarNavbar(aba);
 
+      fecharMenu(); // ← ADICIONE ESTA LINHA
+
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("navbarMenu");
+      menu.classList.toggle("show");
+    }
+
+    document.querySelectorAll("#navbarMenu a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        fecharMenu();
+      });
+
+    });
+    
+    function fecharMenu() {
+      document.getElementById("navbarMenu").classList.remove("show");
     }
   </script>
 </body>
