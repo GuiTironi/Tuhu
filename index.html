@@ -647,6 +647,34 @@
         padding: 20px;
       }
     }
+
+    .menu-extra {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+
+    .menu-extra.show {
+      max-height: 5000px;
+      opacity: 1;
+    }
+
+    .btn-mostrar {
+      display: block;
+      margin: 40px auto;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 999px;
+      background: var(--brown);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-mostrar:hover {
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 
@@ -906,7 +934,7 @@
       <div class="products-grid">
 
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+          <img src="foto/">
           <div class="product-info">
             <h3>Café Expresso</h3>
             <p>Expresso clássico. </p>
@@ -923,160 +951,161 @@
           </div>
         </div>
 
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Carioca</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 00,00</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Média</h3>
-            <p>Café expresso com leite vaporizado. </p>
-            <div class="price">R$ 11,50</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Café com leite pequeno</h3>
-            <p>Café expresso com leite vaporizado. </p>
-            <div class="price">R$ 9,00</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Café coado</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 09,00</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Café mocca</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 16,90</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Café bombom</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 09,90</div>
-          </div>
-        </div>
-
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Cappucino Grande</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 15,90</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Cappucino Pequeno</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 14,50</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Cappucino com nutella</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 17,90</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Cappucino com raspas de chocolate</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 17,90</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Frapê</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 19,90</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Macchiato</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 08,50</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Chocolate Italiano</h3>
-            <p>Expresso com pouco café.</p>
-            <div class="price">R$ 16,00</div>
-          </div>
-        </div>
-
-      </div>
-      <div class="section-title">
-        <h2>Cafés Especiais</h2>
-        <p>Selecionados cuidadosamente para proporcionar sabor e conforto.</p>
       </div>
 
-      <div class="products-grid">
+      <button class="btn-mostrar " onclick="toggleMenuExtra(this)">
+        Mostrar Mais
+      </button>
 
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Latte Vanilla</h3>
-            <p>Espresso cremoso com leite vaporizado e toque suave de baunilha.</p>
-            <div class="price">R$ 16,90</div>
+      <div class="menu-extra mt-4">
+        <div class="products-grid">
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Carioca</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 00,00</div>
+            </div>
           </div>
-        </div>
 
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Mocha Premium</h3>
-            <p>Chocolate intenso, espresso encorpado e finalização cremosa.</p>
-            <div class="price">R$ 19,90</div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Média</h3>
+              <p>Café expresso com leite vaporizado. </p>
+              <div class="price">R$ 11,50</div>
+            </div>
           </div>
-        </div>
 
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
-          <div class="product-info">
-            <h3>Capuccino TUHU</h3>
-            <p>Receita especial da casa com canela e espuma delicada.</p>
-            <div class="price">R$ 17,90</div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Café com leite pequeno</h3>
+              <p>Café expresso com leite vaporizado. </p>
+              <div class="price">R$ 9,00</div>
+            </div>
           </div>
-        </div>
 
-      </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Café coado</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 09,00</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Café mocca</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 16,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Café bombom</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 09,90</div>
+            </div>
+          </div>
+
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Cappucino Grande</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 15,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Cappucino Pequeno</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 14,50</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Cappucino com nutella</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 17,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Cappucino com raspas de chocolate</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 17,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Frapê</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 19,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Macchiato</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 08,50</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Chocolate Italiano</h3>
+              <p>Expresso com pouco café.</p>
+              <div class="price">R$ 16,00</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Latte Vanilla</h3>
+              <p>Espresso cremoso com leite vaporizado e toque suave de baunilha.</p>
+              <div class="price">R$ 16,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Mocha Premium</h3>
+              <p>Chocolate intenso, espresso encorpado e finalização cremosa.</p>
+              <div class="price">R$ 19,90</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop">
+            <div class="product-info">
+              <h3>Capuccino TUHU</h3>
+              <p>Receita especial da casa com canela e espuma delicada.</p>
+              <div class="price">R$ 17,90</div>
+            </div>
+          </div>
+
+        </div>
     </section>
 
     <section id="gelados">
@@ -1201,9 +1230,12 @@
       </div>
     </section>
 
-
+  </div>
 
   </div>
+
+
+
   <!-- RESTAURANTE -->
   <div id="restaurante" class="tab-content">
 
@@ -1490,11 +1522,51 @@
       });
 
     });
-    
+
+
+
     function fecharMenu() {
       document.getElementById("navbarMenu").classList.remove("show");
     }
+
+    function toggleMenuExtra(btn) {
+      const menu = document.querySelector('.menu-extra');
+
+      menu.classList.toggle('show');
+
+      const aberto = menu.classList.contains('show');
+
+      btn.textContent = aberto
+        ? 'Mostrar Menos'
+        : 'Mostrar Mais';
+
+      if (aberto) {
+        // Move o botão para o final da lista expandida
+        menu.appendChild(btn);
+
+        setTimeout(() => {
+          btn.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }, 600);
+
+      } else {
+
+        // Volta o botão para cima
+        const gridPrincipal = document.querySelector('#cafes .products-grid');
+        gridPrincipal.after(btn);
+
+        setTimeout(() => {
+          btn.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }, 100);
+      }
+    }
+
   </script>
 </body>
 
-</html>
+</html>\
